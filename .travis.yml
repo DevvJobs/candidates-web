@@ -3,9 +3,12 @@ language: node_js
 node_js:
   - "node"
 
-script: yarn lint
+script: echo "nothing"
 
 jobs:
   include:
+    - stage: lint
+      script: yarn lint
     - stage: build
       script: yarn build
+
