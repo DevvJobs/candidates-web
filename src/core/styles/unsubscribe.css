@@ -1,0 +1,38 @@
+.unsubscribe {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.unsubscribe__data {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  max-width: 533px;
+  text-align: left;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 1;
+  @media (--phoneLarge-viewport) {
+    padding-top: 100px;
+    &:after {
+      top: 100px;
+    }
+  }
+}
+h1 {
+  color: #455A64;
+  text-align: left;
+}
+p {
+  font-size: 16px;
+  line-height: 1.2;
+}
+a {
+  font-size: 16px;
+  line-height: 1.2;
+}

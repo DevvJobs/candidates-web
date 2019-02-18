@@ -1,0 +1,123 @@
+.v-autocomplete {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.v-autocomplete-input {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  padding: 10px 40px 10px 0;
+  border: 0;
+  color: #455A64;
+  caret-color: #90a4ae;
+  outline: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid #90a4ae;
+  border-radius: 0;
+  -webkit-appearance: none;
+
+  &:focus {
+    border-bottom-color: #4DD0E1;
+  }
+  &::placeholder {
+    color: #CFD8DC;
+  }
+}
+
+.v-autocomplete-list-holder {
+  position: absolute;
+  top: 48px;
+  width: 100%;
+  max-height: 270px;
+  padding: 15px 9px;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 5px 11px rgba(207, 216, 220, .6);
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 10;
+  @media (--desktopLarge-viewport) {
+    min-width: 280px;
+  }
+}
+.v-autocomplete-list {
+  display: block;
+  max-height: 230px;
+  margin: 0;
+  padding: 0 18px 0 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  &::-webkit-scrollbar {
+    width: 9px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 9px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 9px;
+    background-color: #ECEFF1;
+  }
+}
+
+.v-autocomplete-icon {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 13px;
+  height: 7px;
+  fill: #cfd8dc;
+}
+
+.search-input__field {
+  flex: 1 0 auto;
+  position: static;
+
+  .v-autocomplete-input {
+    position: static;
+    padding: 10px 0;
+    border-bottom: none;
+    &::placeholder {
+      font-size: 16px;
+      line-height: 21px;
+      color: #CFD8DC;
+    }
+  }
+
+  .v-autocomplete-list-holder {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-width: 423px;
+    max-height: 255px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px 9px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 5px 11px rgba(207, 216, 220, .6);
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+
+  .v-autocomplete-icon {
+    display: none;
+  }
+}
+
+.v-autocomplete--error {
+  input {
+    border-color: #4DD0E1;
+  }
+}
+
+.v-autocomplete-item-active {
+  .select-dropdown__item {
+    color: #fff;
+    background-color: #4DD0E1;
+  }
+}

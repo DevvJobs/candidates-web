@@ -1,0 +1,13 @@
+version: "2.1"
+services:
+  app:
+    image: devv/zonig5k2jxmtd6hq
+    build:
+      context: ./dev-docker
+    environment:
+      - TERM=linux
+      - HOST=0.0.0.0
+    volumes:
+      - ./:/app
+    ports:
+      - 127.0.0.1:8080:8080

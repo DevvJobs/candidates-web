@@ -1,0 +1,130 @@
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: transparent;
+}
+
+.hljs, .hljs-subst {
+  color: #444
+}
+
+.hljs-comment {
+  color: #888888
+}
+
+.hljs-keyword, .hljs-attribute, .hljs-selector-tag, .hljs-meta-keyword, .hljs-doctag, .hljs-name {
+  font-weight: bold
+}
+
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  color: #880000
+}
+
+.hljs-title, .hljs-section {
+  color: #880000;
+  font-weight: bold
+}
+
+.hljs-regexp, .hljs-symbol, .hljs-variable, .hljs-template-variable, .hljs-link, .hljs-selector-attr, .hljs-selector-pseudo {
+  color: #BC6060
+}
+
+.hljs-literal {
+  color: #78A960
+}
+
+.hljs-built_in, .hljs-bullet, .hljs-code, .hljs-addition {
+  color: #397300
+}
+
+.hljs-meta {
+  color: #1f7199
+}
+
+.hljs-meta-string {
+  color: #4d99bf
+}
+
+.hljs-emphasis {
+  font-style: italic
+}
+
+.hljs-strong {
+  font-weight: bold
+}
+
+.hljs-title-custom {
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 24px;
+  @media(--phone-viewport) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.hljs-text-custom {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.hljs-list-custom {
+  ul {
+    margin-bottom: 20px;
+  }
+  li {
+    position: relative;
+    padding-left: 10px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #455A64;
+
+    &:after{
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #455A64;
+    }
+  }
+}
+
+.hljs-table-custom {
+  table {
+    width: 100%;
+  }
+  th {
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+  }
+  td {
+    padding: 5px 0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+}
+
+.hljs-code-snippet-custom {
+  display: block;
+  padding-bottom: 20px;
+  font-weight: 600;
+  overflow-x: scroll;
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 9px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 9px;
+    background-color: #ECEFF1;
+  }
+}

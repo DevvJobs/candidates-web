@@ -1,0 +1,11 @@
+export const SET_CANDIDATE = 'setCandidate';
+export const SET_CANDIDATE_NAME = 'setCandidateName';
+export const SET_CANDIDATE_COUNTRY = 'setCandidateCountry';
+export const SET_CANDIDATE_OPEN_TO_RELOCATION = 'setCandidateOpenToRelocation';
+export const SET_CANDIDATE_OPEN_TO_REMOTE = 'setCandidateOpenToRemote';
+export const SET_CANDIDATE_SKILLS = 'setCandidateSkills';
+export const SET_CANDIDATE_CHAT_REQUEST_COUNT = 'setCandidateChatRequestCount';
+export const SET_CANDIDATE_CHAT_MESSAGES_COUNT = 'setCandidateChatMessagesCount';
+export const REMOVE_CANDIDATE_SKILL = 'removeCandidateSkills';
+export const UPDATE_CANDIDATE_SKILL = 'updateCandidateSkills';
+export const ADD_CANDIDATE_SKILL = 'addCandidateSkill';

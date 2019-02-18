@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+selenium-debug.log
+
+# npm package lock, we use yarn instead
+package-lock.json
+
+# Files with high probability of containing secrets and such
+*.p12
+.env
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Stuff that can be left by different OSes
+.DS_Store
+.directory
+
+# Build artifacts
+/candidates/
+candidates.tgz
