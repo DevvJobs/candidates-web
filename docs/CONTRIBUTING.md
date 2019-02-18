@@ -1,11 +1,24 @@
 # Contributors guideline
 
+Contributions to this project are [released][contributions-under-license]
+to the public under the [project's open source license][license-link].
+
+This project adheres to a [Code of Conduct][code-of-conduct].
+By participating, you are expected to uphold this code.
+
+[code-of-conduct]: /CODE_OF_CONDUCT.md
+[contributions-under-license]: https://help.github.com/articles/github-terms-of-service/#6-contributions-under-repository-license
+[license-link]: /LICENSE.md
+
+---
+
 First of all, thank you for taking your time to contribute!
 
 We are a small team and there are always more issue than developers hands.
 
 The following is a set of guidelines for contributing to frontend candidates
 part of Devv.Jobs project.
+
 
 ## Table of content
 
