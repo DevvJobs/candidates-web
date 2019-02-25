@@ -16,7 +16,7 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style lang="postcss" scoped>
 * {
   margin: 0;
   padding: 0;
@@ -27,24 +27,23 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  font-family: var(--ff-font);
 }
 .NotFound h4 {
   margin: 2rem;
 }
 .NotFound button {
-  background-color: #4dd0e1;
+  background: linear-gradient(to right, #009eb7 0%, #80deea 100%);
   -moz-border-radius: 28px;
   -webkit-border-radius: 28px;
   border-radius: 28px;
-  border: 1px solid #18ab29;
+  border: 0;
   display: inline-block;
   cursor: pointer;
   color: #ffffff;
-  font-family: Arial;
   font-size: 17px;
   padding: 16px 31px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
 }
 h1 {
   font-size: 150px;
