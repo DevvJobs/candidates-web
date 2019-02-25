@@ -314,6 +314,7 @@ in the end. Example:
 | bug | confirmed bugs or reports that are likely to be bugs |
 | enhancement | suggestion of improvement or new feature |
 | first-issue | good for the first issue, usually small and simple |
+| deployed-to-development | issue implemented and deployed to development, but not yet deployed to production |
 
 #### Pull requests
 
