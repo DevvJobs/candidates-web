@@ -1,5 +1,5 @@
 <template>
-  <form class="chat-message-field" v-on:submit.prevent="onMessageSubmit">
+  <form class="chat-message-field" v-on:submit.prevent="onMessageSubmit" v-on:keyup.ctrl.enter="onMessageSubmit">
     <textarea @click="scrollToLastMessage" v-model="messageText" class="chat-message-field__input" placeholder="Say something..."></textarea>
     <button class="chat-message-field__btn" type="submit">
       <svg class="chat-message-field__btn-icon">
