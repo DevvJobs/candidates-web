@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     onMessageSubmit () {
-      if (this.messageText !== '') {
+      if (this.messageText.trim() !== '') {
         this.$emit('message-submited', this.messageText);
         this.messageText = '';
       }
