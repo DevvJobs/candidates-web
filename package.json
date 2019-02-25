@@ -6,11 +6,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "candidates": "APP_NAME=candidates webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "candidates": "cross-env APP_NAME=candidates webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "yarn candidates",
     "proxy": "node ./proxy.js",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build-candidates": "APP_NAME=candidates node ./build/build.js",
+    "build-candidates": "cross-env APP_NAME=candidates node ./build/build.js",
     "build": "yarn build-candidates"
   },
   "dependencies": {
@@ -37,7 +37,7 @@
     "babel-register": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
-    "cross-env": "^5.0.1",
+    "cross-env": "^5.2.0",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
     "dotenv": "^6.0.0",
