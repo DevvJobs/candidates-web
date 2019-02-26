@@ -57,6 +57,7 @@ export default {
       background-color: #FFFFFF;
       box-shadow: 0 0 15px 2px rgba(207, 216, 220, .8);
       color: #455A64;
+      white-space: pre-line;
     }
     .chat__message-time {
       max-width: 430px;
@@ -70,7 +71,7 @@ export default {
   }
   .chat__message-text {
     margin-left: auto;
-    padding: 15px;
+    padding: 0px 15px 15px 15px;
     font-size: 14px;
     line-height: 1.3em;
     border-radius: 20px;
