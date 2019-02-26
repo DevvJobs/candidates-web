@@ -4,13 +4,12 @@
       <div class="chat-navigation__title">Chat</div>
     </div>
     <div class="chat-navigation">
-      <!--<InputWrapper class="input&#45;&#45;search input&#45;&#45;mb30">-->
-      <!--<input class="input__search" type="text">-->
-      <!--<svg class="input__search-ico">-->
-      <!--<use xlink:href="#loupe"></use>-->
-      <!--</svg>-->
-      <!--</InputWrapper>-->
-      <!--TODO Add search by thread -->
+      <InputWrapper class="input&#45;&#45;search input&#45;&#45;mb30">
+        <input class="input__search" type="text">
+        <svg class="input__search-ico">
+          <use xlink:href="#loupe"></use>
+        </svg>
+      </InputWrapper>
       <ChatTabs
         :allCount=allCount
         :acceptedCount=acceptedCount
@@ -34,11 +33,14 @@
 import { mapGetters, mapActions } from 'vuex';
 import ChatTabs from '@/candidates/profile/chat/shared/ChatTabs';
 import ChatNavigationItem from '@/candidates/profile/chat/shared/navigation/ChatNavigationItem';
+import InputWrapper from '@/core/components/form/InputWrapper';
+
 export default {
   name: 'ChatDialogList',
   components: {
     ChatTabs,
-    ChatNavigationItem
+    ChatNavigationItem,
+    InputWrapper
   },
   data () {
     return {
