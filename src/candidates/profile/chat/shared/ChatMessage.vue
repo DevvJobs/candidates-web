@@ -80,6 +80,7 @@ export default {
     hyphens: auto;
     text-align: justify;
     box-sizing: border-box;
+    white-space: pre-line;
   }
   .chat__message-time {
     margin-top: 5px;
