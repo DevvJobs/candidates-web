@@ -15,14 +15,14 @@
 </template>
 
 <script>
-  export default {
-    props: ['value'],
-    methods: {
-      inputVal ($event) {
-        this.$emit('changeInput', $event.target.value);
-      }
+export default {
+  props: ['value'],
+  methods: {
+    inputVal ($event) {
+      this.$emit('changeInput', $event.target.value);
     }
-  };
+  }
+};
 </script>
 
 <style lang="postcss" scoped>
