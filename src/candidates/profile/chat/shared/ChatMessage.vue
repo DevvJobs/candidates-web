@@ -6,7 +6,7 @@
       </div>
       <div class="chat__message-box">
         <p class="chat__message-text">
-          {{ message.text }}
+          {{ message.text.trim() }}
         </p>
         <p class="chat__message-time">{{ message.chatFormatedDate }}</p>
       </div>
