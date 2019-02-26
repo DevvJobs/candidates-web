@@ -13,7 +13,7 @@
       ></ChatTabs>
       <div class="chat-navigation__list" v-bind:class="{'chat-navigation__list--disabled': processing}">
           <ChatNavigationItem
-            v-for="(contact, index) of sortList(showedContacts)"
+            v-for="(contact, index) of filterItemsMatchingSearch(showedContacts)"
             class="chat-navigation-item-wrapper"
             :contact="contact"
             v-bind:key="index"
@@ -69,7 +69,7 @@ export default {
     ...mapActions({
       selectContact: 'chat/selectContact'
     }),
-    sortList (list) {
+    filterItemsMatchingSearch (list) {
       if (!this.searchText) {
         return list;
       }
