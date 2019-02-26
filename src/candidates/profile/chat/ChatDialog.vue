@@ -124,6 +124,12 @@ export default {
   created () {
     if (!this.selectedContact) {
       const contact = _.find(this.contacts, (obj) => obj.id === this.$route.params.id);
+
+      if (!contact) {
+        this.$router.push({ name: 'ProfileChat' });
+        return;
+      }
+
       this.selectContact(contact)
         .then(() => { /* success */ })
         .catch(() => { /* error */ });
