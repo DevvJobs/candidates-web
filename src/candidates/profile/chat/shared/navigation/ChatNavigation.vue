@@ -4,12 +4,8 @@
       <div class="chat-navigation__title">Chat</div>
     </div>
     <div class="chat-navigation">
-      <InputWrapper class="input&#45;&#45;search input&#45;&#45;mb30">
-        <input class="input__search" type="text">
-        <svg class="input__search-ico">
-          <use xlink:href="#loupe"></use>
-        </svg>
-      </InputWrapper>
+      <ChatSearch class="chat-tabs__search"
+        :value="searchText" @changeInput="setSearchText"></ChatSearch>
       <ChatTabs
         :allCount=allCount
         :acceptedCount=acceptedCount
@@ -17,7 +13,7 @@
       ></ChatTabs>
       <div class="chat-navigation__list" v-bind:class="{'chat-navigation__list--disabled': processing}">
           <ChatNavigationItem
-            v-for="(contact, index) of showedContacts"
+            v-for="(contact, index) of sortList(showedContacts)"
             class="chat-navigation-item-wrapper"
             :contact="contact"
             v-bind:key="index"
@@ -33,19 +29,20 @@
 import { mapGetters, mapActions } from 'vuex';
 import ChatTabs from '@/candidates/profile/chat/shared/ChatTabs';
 import ChatNavigationItem from '@/candidates/profile/chat/shared/navigation/ChatNavigationItem';
-import InputWrapper from '@/core/components/form/InputWrapper';
+import ChatSearch from '@/candidates/profile/chat/shared/ChatSearch';
 
 export default {
   name: 'ChatDialogList',
   components: {
     ChatTabs,
     ChatNavigationItem,
-    InputWrapper
+    ChatSearch
   },
   data () {
     return {
       processing: false,
-      windowWidth: null
+      windowWidth: null,
+      searchText: null
     };
   },
   computed: {
@@ -71,7 +68,28 @@ export default {
   methods: {
     ...mapActions({
       selectContact: 'chat/selectContact'
-    })
+    }),
+    sortList (list) {
+      if (!this.searchText) {
+        return list;
+      }
+
+      const includesIgnoreCase = (str, suffix) =>
+        str.toLowerCase().includes(suffix.toLowerCase());
+
+      return list.filter((item) => {
+        const company = item.company.name;
+        const rep = item.latestRepresentative;
+
+        const matchesCompany = includesIgnoreCase(company, this.searchText);
+        const matchesRepresentative = includesIgnoreCase(rep, this.searchText);
+
+        return matchesCompany || matchesRepresentative;
+      });
+    },
+    setSearchText (value) {
+      this.searchText = value;
+    }
   },
   mounted () {
     this.$nextTick(() => {
