@@ -4,6 +4,8 @@
     <div class="chat-navigation__header">
       <div class="chat-navigation__title">Chat</div>
     </div>
+    <ChatSearch class="chat-tabs__search"
+      :value="searchText" @changeInput="setSearchText"></ChatSearch>
     <ChatTabs
       :allCount=allCount
       :acceptedCount=acceptedCount
@@ -12,7 +14,7 @@
     <div class="chat-navigation">
       <div class="chat-navigation__list" v-bind:class="{'chat-navigation__list--disabled': processing}">
         <ChatMobileNavigationItem
-          v-for="(contact, index) of showedContacts"
+          v-for="(contact, index) of filterItemsMatchingSearch(showedContacts)"
           class="chat-navigation-item-wrapper"
           :contact="contact"
           v-bind:key="index"
@@ -27,15 +29,19 @@
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import ChatTabs from '@/candidates/profile/chat/shared/ChatTabs';
 import ChatMobileNavigationItem from '@/candidates/profile/chat/shared/navigation/ChatMobileNavigationItem';
+import ChatSearch from '@/candidates/profile/chat/shared/ChatSearch';
+
 export default {
   components: {
     ChatMobileNavigationItem,
-    ChatTabs
+    ChatTabs,
+    ChatSearch
   },
   data () {
     return {
       processing: false,
-      windowWidth: null
+      windowWidth: null,
+      searchText: null
     };
   },
   computed: {
@@ -69,6 +75,27 @@ export default {
       this.selectContact(contact)
         .then(() => { /* success */ })
         .catch(() => { /* error */ });
+    },
+    filterItemsMatchingSearch (list) {
+      if (!this.searchText) {
+        return list;
+      }
+
+      const includesIgnoreCase = (str, suffix) =>
+        str.toLowerCase().includes(suffix.toLowerCase());
+
+      return list.filter((item) => {
+        const company = item.company.name;
+        const rep = item.latestRepresentative;
+
+        const matchesCompany = includesIgnoreCase(company, this.searchText);
+        const matchesRepresentative = includesIgnoreCase(rep, this.searchText);
+
+        return matchesCompany || matchesRepresentative;
+      });
+    },
+    setSearchText (value) {
+      this.searchText = value;
     }
   },
   mounted () {
