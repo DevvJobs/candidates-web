@@ -42,6 +42,11 @@ export default {
           ico: 'code',
           exact: true,
           text: 'Knowledge tests'
+        },
+        { route: { name: 'CvUpload' },
+          ico: 'document',
+          exact: true,
+          text: 'Upload CV'
         }
       ]
     };

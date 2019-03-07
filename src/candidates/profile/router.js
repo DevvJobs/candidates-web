@@ -8,6 +8,7 @@ import { PROFILE_EDIT_ROUTER } from '@/candidates/profile/edit/router';
 import { PROFILE_CHAT_ROUTER } from '@/candidates/profile/chat/router';
 import { PROFILE_MOBILE_CHAT_ROUTER } from '@/candidates/profile/chat/router-mobile';
 import { PROFILE_TESTS_ROUTER } from '@/candidates/profile/tests/router';
+import { PROFILE_CV_UPLOAD_ROUTER } from '@/candidates/profile/cv_upload/router';
 
 import profileGuard from '@/candidates/core/guards/profile';
 
@@ -30,7 +31,8 @@ export const PROFILE_ROUTER = {
         PROFILE_CHAT_ROUTER,
         PROFILE_MOBILE_CHAT_ROUTER,
         PROFILE_EDIT_ROUTER,
-        PROFILE_TESTS_ROUTER
+        PROFILE_TESTS_ROUTER,
+        PROFILE_CV_UPLOAD_ROUTER
       ]
     }
   ]
