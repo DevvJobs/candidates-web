@@ -1,8 +1,14 @@
 'use strict';
+const webpack = require('webpack');
 const path = require('path');
 const utils = require('./utils');
 const config = require('../config');
-const vueLoaderConfig = require('./vue-loader.conf');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
+
+const isProduction = process.env.NODE_ENV === 'production';
+const sourceMapEnabled = isProduction
+  ? config.build.productionSourceMap
+  : config.dev.cssSourceMap;
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -27,6 +33,12 @@ module.exports = {
     'lodash',
     './src/' + process.env.APP_NAME + '/main.js'
   ],
+  optimization: {
+    runtimeChunk: true,
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
@@ -43,18 +55,33 @@ module.exports = {
       'config': resolve('config')
     }
   },
+  plugins: [
+    new VueLoaderPlugin(),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+  ],
   module: {
     rules: [
       ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: vueLoaderConfig
+        options: {
+          transformAssetUrls: {
+            video: ['src', 'poster'],
+            source: 'src',
+            img: 'src',
+            image: 'xlink:href'
+          }
+        }
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [
+          resolve('src'),
+          resolve('test'),
+          resolve('node_modules/webpack-dev-server/client')
+        ]
       },
       {
         test: /\.svg$/,
