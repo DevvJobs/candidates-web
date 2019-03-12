@@ -1,7 +1,7 @@
 'use strict';
 const path = require('path');
 const config = require('../config');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const packageConfig = require('../package.json');
 
 exports.assetsPath = function (_path) {
@@ -12,12 +12,13 @@ exports.assetsPath = function (_path) {
   return path.posix.join(assetsSubDirectory, _path)
 };
 
-exports.cssLoaders = function (options) {
+const buildcssLoaders = function (options) {
   options = options || {};
 
   const cssLoader = {
     loader: 'css-loader',
     options: {
+      ident: "css",
       sourceMap: options.sourceMap
     }
   };
@@ -25,13 +26,28 @@ exports.cssLoaders = function (options) {
   const postcssLoader = {
     loader: 'postcss-loader',
     options: {
-      sourceMap: options.sourceMap
+      ident: 'postcss',
+      sourceMap: options.sourceMap,
+      plugins: (loader) => [
+        require('postcss-import'),
+        require("postcss-custom-media")({ extensions: {
+          '--phone-viewport': '(max-width: 30em)', // 480
+          '--phoneLarge-viewport': '(max-width: 36em)', // 576
+          '--tablet-viewport': '(max-width: 48em)', // 768
+          '--desktopSmall-viewport': '(max-width: 53em)', // 848
+          '--desktop-viewport': '(max-width: 60em)', // 960
+          '--desktopLarge-viewport': '(max-width: 77em)' // 1232
+        }}),
+        require('postcss-nested'),
+        require('postcss-preset-env')()
+      ]
     }
   };
 
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader];
+    const loaders =
+      options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader];
 
     if (loader) {
       loaders.push({
@@ -42,10 +58,7 @@ exports.cssLoaders = function (options) {
       })
     }
     if (options.extract) {
-      return ExtractTextPlugin.extract({
-        use: loaders,
-        fallback: 'vue-style-loader'
-      })
+      return [MiniCssExtractPlugin.loader].concat(loaders)
     } else {
       return ['vue-style-loader'].concat(loaders)
     }
@@ -56,9 +69,9 @@ exports.cssLoaders = function (options) {
   }
 };
 
-exports.styleLoaders = function (options) {
+exports.styleLoaders = (options) => {
   const output = [];
-  const loaders = exports.cssLoaders(options);
+  const loaders = buildcssLoaders(options);
 
   for (const extension in loaders) {
     const loader = loaders[extension];
