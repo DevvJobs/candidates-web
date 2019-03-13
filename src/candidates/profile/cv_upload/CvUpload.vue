@@ -121,7 +121,8 @@ export default {
           data: fileReader.result
         });
 
-        pagesContent.forEach((text, pageNum) => {
+        pagesContent.forEach((text, index) => {
+          const pageNum = index + 1;
           console.log('#page #%d\n%s', pageNum, text);
         });
 
