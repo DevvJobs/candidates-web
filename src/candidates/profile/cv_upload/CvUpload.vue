@@ -62,6 +62,14 @@ const readPdfPagesContent = async (...args) => {
   const contents = await Promise.all(contentPromises);
 
   const pagesContent = contents.map(content => {
+    // NOTE:
+    //
+    // Concatenating strings like that can actually be a performance
+    // bottleneck. So if the upload ever needs to be optimized, this
+    // may be a good place to start.
+    //
+    // --- 2018-03-13 - lilsweetcaligula
+    //
     const pageText = content.items
       .reduce((acc, item) => acc + item.str, '');
 
@@ -73,6 +81,24 @@ const readPdfPagesContent = async (...args) => {
   return pagesContent;
 };
 
+// TODO:
+//
+// 1. Limit the maximum size of the file allowed to be uploaded.
+//    This can be done with the :size prop of the file-upload
+//    component. Please see the documentation for details:
+//
+//    https://lian-yue.github.io/vue-upload-component/#/en/documents#options-props-size
+//
+// 2. Currently it is the inputFilter method that validates that
+//    the uploaded file has a '.pdf' extension. This is rather
+//    unwieldy, and can be replaced with the :extensions prop of
+//    the file-upload component. Please see the documentation for
+//    details:
+//
+//    https://lian-yue.github.io/vue-upload-component/#/en/documents#options-props-extensions
+//
+// --- 2018-03-13 - lilsweetcaligula
+//
 export default {
   components: {
     FileUpload: VueUploadComponent
@@ -83,6 +109,13 @@ export default {
 
       const fileReader = new FileReader();
 
+      // TODO:
+      //
+      // FileReader may additionally raise the `error` and `abort` events,
+      // that must be handled. 
+      //
+      // --- 2018-03-13 - lilsweetcaligula
+      //
       fileReader.addEventListener('loadend', async () => {
         const pagesContent = await readPdfPagesContent({
           data: fileReader.result
