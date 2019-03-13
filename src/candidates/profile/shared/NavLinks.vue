@@ -22,6 +22,15 @@ import { mapGetters, mapMutations } from 'vuex';
 
 export default {
   data () {
+    const cvUploadRoute = {
+      route: { name: 'CvUpload' },
+      ico: 'document',
+      exact: true,
+      text: 'Upload CV'
+    };
+
+    const isCvUploadEnabled = process.env.ENABLE_CV_UPLOAD === true;
+
     return {
       menu: [
         { route: { name: 'ProfileDashboard' },
@@ -43,11 +52,7 @@ export default {
           exact: true,
           text: 'Knowledge tests'
         },
-        { route: { name: 'CvUpload' },
-          ico: 'document',
-          exact: true,
-          text: 'Upload CV'
-        }
+        ...(isCvUploadEnabled ? [cvUploadRoute] : [])
       ]
     };
   },
