@@ -12,6 +12,8 @@ import { PROFILE_CV_UPLOAD_ROUTER } from '@/candidates/profile/cv_upload/router'
 
 import profileGuard from '@/candidates/core/guards/profile';
 
+const isCvUploadEnabled = process.env.ENABLE_CV_UPLOAD === true;
+
 export const PROFILE_ROUTER = {
   path: 'profile',
   component: Profile,
@@ -32,7 +34,7 @@ export const PROFILE_ROUTER = {
         PROFILE_MOBILE_CHAT_ROUTER,
         PROFILE_EDIT_ROUTER,
         PROFILE_TESTS_ROUTER,
-        PROFILE_CV_UPLOAD_ROUTER
+        ...(isCvUploadEnabled ? [PROFILE_CV_UPLOAD_ROUTER] : [])
       ]
     }
   ]
