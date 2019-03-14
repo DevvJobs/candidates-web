@@ -29,7 +29,12 @@ const sentryDsn = loadVar("SENTRY_DSN", {
 const developmentMode = loadVar("DEVELOPMENT_MODE", {
   required: false,
   func: isTruthy
-})
+});
+
+const enableCvUpload = loadVar("ENABLE_CV_UPLOAD", {
+  required: false,
+  func: isTruthy
+});
 
 const appName = loadVar("APP_NAME");
 
@@ -44,5 +49,6 @@ module.exports = {
   APP_ENTRY_POINT_FILE: asString(process.env.APP_ENTRY_POINT_FILE),
   SENTRY_ENABLED: asIs(sentryEnabled),
   SENTRY_DSN: asString(sentryDsn),
-  DEVELOPMENT_MODE: asIs(developmentMode)
+  DEVELOPMENT_MODE: asIs(developmentMode),
+  ENABLE_CV_UPLOAD: asIs(enableCvUpload)
 };
