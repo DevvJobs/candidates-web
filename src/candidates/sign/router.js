@@ -2,6 +2,7 @@ import authService from '@/candidates/core/services/auth.service';
 
 import Sign from '@/candidates/sign/Sign';
 import SignIn from '@/candidates/sign/SignIn';
+import SignUp from '@/candidates/sign/SignUp';
 import SignLayout from '@/candidates/sign/shared/SignLayout';
 import SignMessage from '@/candidates/sign/SignMessage';
 import SignVerificationCode from '@/candidates/sign/SignVerificationCode';
@@ -38,6 +39,11 @@ export const SIGN_ROUTER = {
       path: 'sign/in',
       name: 'SignIn',
       component: SignIn
+    },
+    {
+      path: 'sign/up',
+      name: 'SignUp',
+      component: SignUp
     },
     {
       path: 'sign/verification-code',
