@@ -1,0 +1,100 @@
+.sign {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  justify-content: space-between;
+}
+.sign__form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.sign__box {
+  margin-bottom: 76px;
+}
+.sign__title {
+  margin: 0 0 40px;
+  padding: 0;
+  text-align: center;
+  font-family: var(--ff-font);
+  font-size: 40px;
+  font-weight: 200;
+  color: #455A64;
+  @media (--phoneLarge-viewport) {
+    font-size: 36px;
+  }
+}
+.sign__description {
+  margin: 0 0 100px;
+  padding: 0;
+  text-align: center;
+  font-family: var(--ff-font);
+  font-size: 32px;
+  font-weight: 200;
+  color: #455A64;
+  @media (--phoneLarge-viewport) {
+    font-size: 28px;
+  }
+}
+.sign-name-wrapper {
+  margin-bottom: 30px;
+}
+.sign__input {
+  max-width: 360px;
+  margin: 0 auto;
+}
+.sign__btn {
+  position: relative;
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 0 auto;
+  outline: none;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(to right, #009eb7 0%, #80deea 100%);
+  overflow: hidden;
+  &:hover {
+    background: #009EB7;
+  }
+  &:active {
+    background: #009EB7;
+  }
+  &:disabled {
+    background: transparent;
+    border: 1px solid #90a4ae;
+  .sign__btn-icon {
+      fill: #90a4ae;
+    }
+  }
+}
+.sign__btn-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 13px;
+  fill: #fff;
+}
+.sign__navigation {
+  padding: 55px 0;
+  font-family: var(--ff-font);
+  font-size: 12px;
+  text-align: center;
+  color: #90A4AE;
+}
+.sign__navigation-link {
+  color: rgb(91,212,226);
+  text-decoration: none;
+  transition: color .3s ease;
+  &:hover {
+    color: #009EB7;
+  }
+}
+.sign__navigation-link {
+  background: none;
+}
