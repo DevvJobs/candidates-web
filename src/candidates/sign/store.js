@@ -2,12 +2,14 @@ import authService from '@/candidates/core/services/auth.service';
 import ErrorReporting from '@/candidates/core/services/error-reporting.service';
 
 const SET_CANDIDATE_EMAIL = 'SET_CANDIDATE_AUTH_EMAIL';
+const SET_SUCCESS_REGISTRATION = 'SET_SUCCESS_REGISTRATION';
 
 const getDefaultState = () => {
   return {
     email: null,
     login_attempt_token: null,
-    session_id: null
+    session_id: null,
+    successRegistration: false
   };
 };
 
@@ -19,6 +21,9 @@ const mutations = {
   },
   [SET_CANDIDATE_EMAIL] (state, email) {
     state.email = email;
+  },
+  [SET_SUCCESS_REGISTRATION] () {
+    state.successRegistration = true;
   }
 };
 
@@ -28,6 +33,7 @@ const actions = {
       commit('setLoading', null, { root: true });
       const response = await authService.signUp(email, name);
       commit(SET_CANDIDATE_EMAIL, email);
+      commit(SET_SUCCESS_REGISTRATION);
       return response;
     } catch (error) {
       ErrorReporting(error);
