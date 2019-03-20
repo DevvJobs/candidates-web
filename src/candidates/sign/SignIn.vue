@@ -61,7 +61,7 @@ export default {
     }),
     signInRedirect () {
       localStorage.removeItem('lastStepComplete');
-      this.$router.push({path: '/'});
+      this.$router.push({path: '/sign/up'});
     },
     onSubmit () {
       this.signIn(this.email)
