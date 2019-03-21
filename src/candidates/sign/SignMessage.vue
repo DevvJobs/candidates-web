@@ -19,9 +19,8 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 import InputWrapper from '@/core/components/form/InputWrapper';
-import authService from '@/candidates/core/services/auth.service';
 import { formError } from '@/core/mixins/formErrorHanding';
 
 export default {
@@ -37,19 +36,24 @@ export default {
     })
   },
   methods: {
-    ...mapMutations({
-      setLoading: 'setLoading',
-      unsetLoading: 'unsetLoading'
+    ...mapActions({
+      signIn: 'sign/requestLoginCode'
     }),
     logIn () {
-      this.setLoading();
-      authService.getAuthData(this.email).then(() => {
-        this.unsetLoading();
-        this.$router.push({ path: '/sign/verification-code' });
-      }).catch((errors) => {
-        this.unsetLoading();
-        this.errors = errors.response.data.details;
-      });
+      this.signIn(this.email)
+        .then((response) => {
+          if (response.success) {
+            this.$router.push({ path: '/sign/verification-code' });
+          } else {
+            this.errors = response.errors;
+          };
+        }).catch((error) => {
+          if (error.response) {
+            this.errors = error.response.data.details;
+          } else {
+            this.errors = {email: [{message: 'Unexpected error'}]};
+          }
+        });
     }
   }
 };

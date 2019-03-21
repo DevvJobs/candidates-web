@@ -65,8 +65,12 @@ export default {
     },
     onSubmit () {
       this.signIn(this.email)
-        .then(() => {
-          this.$router.push({ path: '/sign/verification-code' });
+        .then((response) => {
+          if (response.success) {
+            this.$router.push({ path: '/sign/verification-code' });
+          } else {
+            this.errors = response.errors;
+          };
         }).catch((error) => {
           if (error.response) {
             this.errors = error.response.data.details;

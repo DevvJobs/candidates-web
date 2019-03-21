@@ -68,11 +68,15 @@ export default {
         name: this.name,
         email: this.email
       })
-        .then(() => {
-          this.$router.push({ path: '/sign/success-registration' });
+        .then((response) => {
+          if (response.success) {
+            this.$router.push({ path: '/sign/success-registration' });
+          } else {
+            this.errors = response.errors;
+          };
         }).catch((error) => {
-          if (error.response) {
-            this.errors = error.response.data.details;
+          if (error) {
+            this.errors = error.response.data.errors;
           } else {
             this.errors = {email: [{message: 'Unexpected error'}]};
           }
