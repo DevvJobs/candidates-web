@@ -2,9 +2,11 @@ import authService from '@/candidates/core/services/auth.service';
 
 import Sign from '@/candidates/sign/Sign';
 import SignIn from '@/candidates/sign/SignIn';
+import SignUp from '@/candidates/sign/SignUp';
 import SignLayout from '@/candidates/sign/shared/SignLayout';
 import SignMessage from '@/candidates/sign/SignMessage';
 import SignVerificationCode from '@/candidates/sign/SignVerificationCode';
+import signStore from '@/candidates/sign/store';
 
 export const SIGN_ROUTER = {
   path: '/',
@@ -25,19 +27,22 @@ export const SIGN_ROUTER = {
       path: 'sign/success-registration',
       component: SignMessage,
       beforeEnter: (to, from, next) => {
-        if (!localStorage.getItem('successRegistration')) {
-          next({ path: '/' });
-        } else {
+        if (signStore.state.successRegistration) {
           next();
+        } else {
+          next({ path: '/' });
         }
-        // TODO fix me. Unnecessary next
-        next();
       }
     },
     {
       path: 'sign/in',
       name: 'SignIn',
       component: SignIn
+    },
+    {
+      path: 'sign/up',
+      name: 'SignUp',
+      component: SignUp
     },
     {
       path: 'sign/verification-code',
