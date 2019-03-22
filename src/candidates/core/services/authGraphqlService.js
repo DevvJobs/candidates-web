@@ -21,6 +21,10 @@ class AuthGraphqlService {
                 error
                 message
               }
+              unknownKeys {
+                error
+                message
+              }
             }
             success
           }
