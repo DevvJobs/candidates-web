@@ -1,5 +1,3 @@
-import authService from '@/candidates/core/services/auth.service';
-
 import Sign from '@/candidates/sign/Sign';
 import SignIn from '@/candidates/sign/SignIn';
 import SignUp from '@/candidates/sign/SignUp';
@@ -49,7 +47,7 @@ export const SIGN_ROUTER = {
       name: 'SignVerificationCode',
       component: SignVerificationCode,
       beforeEnter: (to, from, next) => {
-        if (!authService.login_attempt_token) {
+        if (!signStore.state.login_attempt_token) {
           next({ path: '/sign/in' });
         } else {
           next();

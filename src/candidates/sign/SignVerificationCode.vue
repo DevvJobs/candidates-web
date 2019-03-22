@@ -25,7 +25,7 @@
       </button>
     </form>
     <div class="sign__navigation">
-      <span class="sign__navigation-text">SESSION ID: {{sessionId()}}</span>
+      <span class="sign__navigation-text">SESSION ID: {{sessionId}}</span>
     </div>
   </div>
 
@@ -38,7 +38,6 @@ import { mapGetters, mapActions } from 'vuex';
 import InputWrapper from '@/core/components/form/InputWrapper';
 import Button from '@/core/components/form/Button';
 import { formError } from '@/core/mixins/formErrorHanding';
-import authService from '@/candidates/core/services/auth.service';
 import SignHeader from '@/candidates/sign/shared/SignHeader.vue';
 
 export default {
@@ -58,7 +57,7 @@ export default {
   computed: {
     ...mapGetters({
       'login_attempt_token': 'sign/login_attempt_token',
-      'session_id': 'sign/session_id',
+      'sessionId': 'sign/session_id',
       'email': 'sign/email'
     }),
     isCodeEmty () {
@@ -69,13 +68,14 @@ export default {
     ...mapActions({
       signIn: 'sign/submitLoginCode'
     }),
-    sessionId () {
-      return authService.session_id;
-    },
     onSubmit () {
       this.signIn(this.code)
-        .then(() => {
-          this.$router.push({path: '/profile/create'});
+        .then((response) => {
+          if (response.success) {
+            this.$router.push({path: '/profile/create'});
+          } else {
+            this.errors = response.errors;
+          };
         }).catch((error) => {
           if (error.response) {
             this.errors = error.response.data.details;
