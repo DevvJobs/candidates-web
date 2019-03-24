@@ -28,6 +28,7 @@ import VueUploadComponent from 'vue-upload-component';
 
 import _ from 'lodash';
 import path from 'path';
+import CvParser from '@/candidates/core/services/cv-parsing.service';
 
 // NOTE:
 //
@@ -127,7 +128,19 @@ export default {
         });
 
         alert('File upload successful.' +
-          ' Please check your console for details.');
+          ' Extracting the skills...');
+
+        const cvParser = new CvParser();
+
+        pagesContent.forEach((text, index) => { 
+          const pageNum = index + 1;
+          const skills = cvParser.findAllSkillsIn(text);
+
+          console.log('#page #%d\n%s', pageNum, skills);
+        });
+
+        alert('Skills extraction successful.' +
+        ' Please check your console for details.');
       });
 
       const { file } = newFileWrapper;
