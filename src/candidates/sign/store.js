@@ -135,6 +135,10 @@ const actions = {
     } catch (error) {
       ErrorReporting(error);
 
+      localStorage.removeItem('token');
+      localStorage.removeItem('token-tests');
+      localStorage.setItem('lastStepComplete', '');
+
       throw error;
     } finally {
       commit('unsetLoading', null, { root: true });
