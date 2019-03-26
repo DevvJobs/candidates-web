@@ -1,9 +1,11 @@
 <template>
   <div class="layout">
     <Nav>
+      <GithubLink></GithubLink>
       <Logout></Logout>
     </Nav>
     <NavMobile>
+      <GithubLink></GithubLink>
       <Logout></Logout>
     </NavMobile>
     <div class="layout__content">
@@ -20,13 +22,15 @@ import { mapGetters } from 'vuex';
 import Nav from '@/candidates/profile/shared/Nav.vue';
 import NavMobile from '@/candidates/profile/shared/NavMobile.vue';
 import Logout from '@/candidates/profile/shared/Logout.vue';
+import GithubLink from '@/candidates/profile/shared/GithubLink.vue';
 import Header from '@/candidates/profile/shared/Header.vue';
 export default {
   components: {
     Nav,
     NavMobile,
     Header,
-    Logout
+    Logout,
+    GithubLink
   },
   computed: {
     ...mapGetters({
