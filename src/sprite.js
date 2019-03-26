@@ -42,3 +42,6 @@ import '@/assets/shortlisted.svg';
 import '@/assets/relocation.svg';
 import '@/assets/remote.svg';
 import '@/assets/templates.svg';
+// font-awesome
+import '@/assets/fontawesome/code-solid.svg';
+// misc
