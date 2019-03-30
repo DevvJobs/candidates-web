@@ -71,7 +71,7 @@ const readPdfPagesContent = async (...args) => {
     // --- 2018-03-13 - lilsweetcaligula
     //
     const pageText = content.items
-      .reduce((acc, item) => acc + item.str, '');
+      .reduce((acc, item) => acc + ' ' + item.str, '');
 
     return pageText;
   });
