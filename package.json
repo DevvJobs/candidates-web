@@ -67,7 +67,7 @@
     "ora": "^1.2.0",
     "pdfjs-dist": "^2.0.943",
     "portfinder": "^1.0.20",
-    "postcss-custom-media": "^6.0.0",
+    "postcss-custom-media": "^7.0.8",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-nested": "^3.0.0",
