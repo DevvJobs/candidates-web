@@ -22,7 +22,7 @@
     "apollo-link-error": "^1.1.0",
     "apollo-link-http": "^1.5.4",
     "apollo-link-retry": "^2.2.4",
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "^9.5.0",
     "axios": "^0.18.0",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
