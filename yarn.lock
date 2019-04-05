@@ -513,13 +513,14 @@ apollo-link-http@^1.5.4:
     apollo-link "^1.2.3"
     apollo-link-http-common "^0.2.5"
 
-apollo-link-retry@^2.2.4:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/apollo-link-retry/-/apollo-link-retry-2.2.5.tgz#7c92170ea502685e96db32538f5ad070ddd007be"
-  integrity sha512-DZUyTVDBH5toiqtgJxM955wnXVXeRDRkXrFOEUvXsXyEJ0Bb9ej5YfrdJBPyQL2vB6yP/1l8nEFR1ivV88ivgw==
+apollo-link-retry@^2.2.13:
+  version "2.2.13"
+  resolved "https://registry.yarnpkg.com/apollo-link-retry/-/apollo-link-retry-2.2.13.tgz#67b096c844eac5e326ed692477815dc4b0536766"
+  integrity sha512-/MnpaRPaMFZtiY6jyyPJDbUNf4SJI+4CtKPSYA6UXTFw72D0hXclyOVTq58M1N0GbCDmUezJA7kO5B3r99nr/Q==
   dependencies:
     "@types/zen-observable" "0.8.0"
-    apollo-link "^1.2.3"
+    apollo-link "^1.2.11"
+    tslib "^1.9.3"
 
 apollo-link@^1.0.0, apollo-link@^1.2.11, apollo-link@^1.2.3:
   version "1.2.11"
