@@ -140,6 +140,7 @@ export default {
       } else {
         this.clearYears();
         this.clearMonths();
+        return undefined;
       }
     },
     /* eslint-disable-next-line */

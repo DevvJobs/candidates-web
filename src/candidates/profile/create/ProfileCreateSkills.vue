@@ -90,7 +90,6 @@
 
 <script>
 import InputWrapper from '@/core/components/form/InputWrapper';
-import Button from '@/core/components/form/Button';
 import ProfileCreateTitle from '@/candidates/profile/create/shared/ProfileCreateTitle';
 import ProfileCreateProgress from '@/candidates/profile/create/shared/ProfileCreateProgress';
 import candidateService from '@/candidates/core/services/candidate.service';
@@ -122,7 +121,6 @@ export default {
   ],
   components: {
     InputWrapper,
-    Button,
     ProfileCreateTitle,
     ProfileCreateProgress
   },
@@ -144,6 +142,7 @@ export default {
       } else {
         this.clearYears();
         this.clearMonths();
+        return undefined;
       }
     },
     /* eslint-disable-next-line */

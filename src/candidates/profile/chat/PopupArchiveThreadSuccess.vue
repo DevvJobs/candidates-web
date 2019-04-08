@@ -19,12 +19,10 @@
 
 <script>
 import { mapMutations } from 'vuex';
-import Button from '@/core/components/form/Button.vue';
 import Popup from '@/core/components/popup/Popup';
 
 export default {
   components: {
-    Button,
     Popup
   },
   methods: {

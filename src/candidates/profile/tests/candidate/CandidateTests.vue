@@ -8,13 +8,11 @@
 <script>
 import TestHeader from '@/candidates/profile/tests/candidate/shared/TestsHeader';
 import TestTabs from '@/candidates/profile/tests/candidate/shared/TestsTabs';
-import TestMessage from '@/candidates/profile/tests/candidate/shared/TestsMessage';
 import { mapActions } from 'vuex';
 export default {
   components: {
     TestHeader,
-    TestTabs,
-    TestMessage
+    TestTabs
   },
   methods: {
     ...mapActions({

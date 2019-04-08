@@ -57,6 +57,8 @@ export default {
           return 'Start test';
         case IN_PROGRESS:
           return 'Continue';
+        default:
+          return undefined;
       }
     },
     isButtonStatusFinished () {

@@ -6,6 +6,7 @@ import router from '@/candidates/router';
 import store from '@/candidates/store/index';
 import VueChatScroll from 'vue-chat-scroll';
 require('@/core/filters/pluralize');
+require('@/core/filters/with_default');
 require('../sprite.js');
 
 const isProduction = (process.env.NODE_ENV === 'production');

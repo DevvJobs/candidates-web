@@ -18,13 +18,11 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import InputSwitcher from '@/core/components/form/InputSwitcher';
-import Button from '@/core/components/form/Button';
 import ProfileCreateTitle from '@/candidates/profile/create/shared/ProfileCreateTitle';
 import ProfileCreateProgress from '@/candidates/profile/create/shared/ProfileCreateProgress';
 
 export default {
   components: {
-    Button,
     ProfileCreateTitle,
     ProfileCreateProgress,
     InputSwitcher

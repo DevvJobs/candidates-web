@@ -13,7 +13,7 @@
               v-on:change="onYearsChange"
               :value="yearsOfExperience" type="number" min="0" max="39">
           </InputWrapper>
-          <span class="profile-edit-skills__text">{{ 'year' | pluralize(yearsOfExperience) || 'year'}}</span>
+          <span class="profile-edit-skills__text">{{ 'year' | pluralize(yearsOfExperience) | with_default('year') }}</span>
         </span>
         <span class="profile-edit-skills__field"
               :class="{'profile-edit-skills__field--error': months}">
@@ -41,8 +41,6 @@
 <script>
 import { mapMutations } from 'vuex';
 import InputWrapper from '@/core/components/form/InputWrapper';
-import Button from '@/core/components/form/Button';
-import ProfileCreateTitle from '@/candidates/profile/create/shared/ProfileCreateTitle';
 import { autocomplete } from '@/core/mixins/autocomplete';
 import { formError } from '@/core/mixins/formErrorHanding';
 import { parseMonthYears } from '@/core/mixins/parseMonthYears';
@@ -72,9 +70,7 @@ export default {
     parseMonthYears
   ],
   components: {
-    InputWrapper,
-    Button,
-    ProfileCreateTitle
+    InputWrapper
   },
   computed: {
     yearsOfExperience () {

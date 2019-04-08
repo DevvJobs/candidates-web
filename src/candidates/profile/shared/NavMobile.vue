@@ -38,13 +38,11 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex';
 import { clickOutside } from '@/core/directives/clickOutside';
-import Avatar from '@/core/components/Avatar';
 import NavLinks from '@/candidates/profile/shared/NavLinks.vue';
 import NavUser from '@/candidates/profile/shared/NavUser.vue';
 
 export default {
   components: {
-    Avatar,
     NavLinks,
     NavUser
   },

@@ -36,7 +36,6 @@
 import { mapGetters, mapActions } from 'vuex';
 
 import InputWrapper from '@/core/components/form/InputWrapper';
-import Button from '@/core/components/form/Button';
 import { formError } from '@/core/mixins/formErrorHanding';
 import SignHeader from '@/candidates/sign/shared/SignHeader.vue';
 
@@ -46,7 +45,6 @@ export default {
   ],
   components: {
     InputWrapper,
-    Button,
     SignHeader
   },
   data () {

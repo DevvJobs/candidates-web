@@ -10,7 +10,10 @@
 export default {
   name: 'InputWrapper',
   props: {
-    label: '',
+    label: {
+      type: String,
+      default: ''
+    },
     message: null
   }
 };

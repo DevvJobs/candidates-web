@@ -5,11 +5,11 @@
     </svg>
     <span class="dashboard-message__description">
       <span class="dashboard-message__count">{{ candidate.totalUnreadMessagesCount }} new</span>
-      <span class="dashboard-message__text">{{'message' | pluralize(candidate.totalUnreadMessagesCount) || 'messages'}}</span>
+      <span class="dashboard-message__text">{{'message' | pluralize(candidate.totalUnreadMessagesCount) | with_default('messages')}}</span>
     </span>
     <span class="dashboard-message__description">
       <span class="dashboard-message__count">{{candidate.totalContactRequestsCount}} new</span>
-      <span class="dashboard-message__text">{{'request' | pluralize(candidate.totalContactRequestsCount) || 'requests'}}</span>
+      <span class="dashboard-message__text">{{'request' | pluralize(candidate.totalContactRequestsCount) | with_default('requests') }}</span>
     </span>
   </router-link>
 </template>

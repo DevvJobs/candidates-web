@@ -11,7 +11,10 @@ export default {
     };
   },
   props: {
-    progress: ''
+    progress: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>

@@ -9,11 +9,9 @@
 </template>
 
 <script>
-import Tabs from '@/candidates/profile/tests/candidate/shared/TestsTabs';
 import { mapGetters } from 'vuex';
 export default {
   components: {
-    Tabs
   },
   computed: {
     ...mapGetters({

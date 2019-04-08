@@ -42,7 +42,6 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import InputWrapper from '@/core/components/form/InputWrapper';
-import Button from '@/core/components/form/Button';
 import ProfileCreateTitle from '@/candidates/profile/create/shared/ProfileCreateTitle';
 import ProfileCreateProgress from '@/candidates/profile/create/shared/ProfileCreateProgress';
 import {autocomplete} from '@/core/mixins/autocomplete';
@@ -52,7 +51,6 @@ export default {
     autocomplete
   ],
   components: {
-    Button,
     InputWrapper,
     ProfileCreateTitle,
     ProfileCreateProgress
