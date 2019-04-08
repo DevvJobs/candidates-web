@@ -15,7 +15,10 @@
 <script>
 export default {
   props: {
-    showLink: false
+    showLink: {
+      type: Boolean,
+      default: false
+    }
   },
   computed: {
     linkTo () {

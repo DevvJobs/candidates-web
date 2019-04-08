@@ -44,8 +44,7 @@ import SearchTag from './SearchTag';
 
 export default {
   components: {
-    SearchTag,
-    Select
+    SearchTag
   },
   computed: {
     ...mapGetters({

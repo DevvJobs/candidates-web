@@ -71,6 +71,8 @@ export default {
           return this.inProgressTests;
         case FINISHED:
           return this.finishedTests;
+        default:
+          return undefined;
       }
     }
   },

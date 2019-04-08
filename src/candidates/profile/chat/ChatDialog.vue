@@ -42,12 +42,7 @@ import _ from 'lodash';
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 import { REQUEST_SENT, ACCEPTED } from '@/core/modules/chat/contactStatuses';
 import Loader from '@/core/components/Loader';
-import InputWrapper from '@/core/components/form/InputWrapper';
-import Button from '@/core/components/form/Button';
-import ChatMessageDate from '@/candidates/profile/chat/shared/ChatDate';
-import ChatMessage from '@/candidates/profile/chat/shared/ChatMessage';
 import ChatMessagesList from '@/candidates/profile/chat/shared/ChatMessagesList';
-import ChatMessageCancelRequest from '@/candidates/profile/chat/shared/ChatCancelRequest';
 import ChatMessageRequest from '@/candidates/profile/chat/shared/candidate/ChatMessageRequest';
 import ChatMenu from '@/candidates/profile/chat/shared/actions/ChatMenu';
 import MessageInput from '@/candidates/profile/chat/shared/MessageInput';
@@ -62,14 +57,9 @@ export default {
     };
   },
   components: {
-    InputWrapper,
-    Button,
     Loader,
     ChatMessagesList,
-    ChatMessage,
-    ChatMessageDate,
     MessageInput,
-    ChatMessageCancelRequest,
     ChatMessageRequest,
     ChatMenu,
     PopupArchiveSingleThread,

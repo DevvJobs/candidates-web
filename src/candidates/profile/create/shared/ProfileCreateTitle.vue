@@ -10,9 +10,18 @@
 export default {
   name: 'Profileprofile-createTitle',
   props: {
-    candidateName: '',
-    description: '',
-    title: ''
+    candidateName: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>

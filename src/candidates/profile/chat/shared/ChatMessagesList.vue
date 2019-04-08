@@ -6,18 +6,12 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
-import InputWrapper from '@/core/components/form/InputWrapper';
-import Button from '@/core/components/form/Button';
 import ChatMessage from '@/candidates/profile/chat/shared/ChatMessage';
-import ChatMessageDate from '@/candidates/profile/chat/shared/ChatDate';
 
 export default {
   name: 'Chat',
   components: {
-    InputWrapper,
-    Button,
-    ChatMessage,
-    ChatMessageDate
+    ChatMessage
   },
   data () {
     return {

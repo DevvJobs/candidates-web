@@ -36,9 +36,7 @@
 <script>
 import { mapGetters, mapMutations } from 'vuex';
 import { clickOutside } from '@/core/directives/clickOutside';
-import InputWrapper from '@/core/components/form/InputWrapper';
 import intercomService from '@/core/services/intercom.service';
-import Button from '@/core/components/form/Button';
 import ChatNavigation from '../shared/navigation/ChatNavigation';
 import ChatCompanyInfo from '../shared/ChatCompanyInfo';
 import SelectChatBottomBar from '@/candidates/profile/chat/SelectChatBottomBar';
@@ -49,8 +47,6 @@ import PopupArchiveThreadSuccess from '@/candidates/profile/chat/PopupArchiveThr
 export default {
   name: 'Chat',
   components: {
-    InputWrapper,
-    Button,
     ChatNavigation,
     ChatCompanyInfo,
     SelectChatBottomBar,
