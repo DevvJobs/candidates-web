@@ -9,7 +9,7 @@
     "candidates": "cross-env APP_NAME=candidates webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "yarn candidates",
     "proxy": "node ./proxy.js",
-    "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
+    "lint": "eslint --ext .js,.vue src",
     "build-candidates": "cross-env APP_NAME=candidates node ./build/build.js",
     "build": "yarn build-candidates",
     "static": "node ./static-server.js"
