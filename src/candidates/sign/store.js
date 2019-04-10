@@ -11,6 +11,7 @@ const getDefaultState = () => {
     email: null,
     login_attempt_token: null,
     session_id: null,
+    token: null,
     successRegistration: false
   };
 };
