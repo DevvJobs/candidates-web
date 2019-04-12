@@ -64,7 +64,7 @@
     "node-notifier": "^5.4.0",
     "normalize.css": "^8.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "ora": "^1.2.0",
+    "ora": "^3.4.0",
     "pdfjs-dist": "^2.0.943",
     "portfinder": "^1.0.20",
     "postcss-custom-media": "^7.0.8",
