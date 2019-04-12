@@ -85,7 +85,7 @@
     "uuid": "^3.3.2",
     "v-autocomplete": "git+https://github.com/DevvJobs/v-autocomplete.git#91e4d845475d8fc1337e8ee9572af7e2d4a9c803",
     "vue": "^2.6.10",
-    "vue-apollo": "^3.0.0-beta.19",
+    "vue-apollo": "^3.0.0-beta.28",
     "vue-chat-scroll": "^1.3.5",
     "vue-loader": "^15.6.4",
     "vue-router": "^3.0.3",
