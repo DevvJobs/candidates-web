@@ -20,7 +20,7 @@
     "apollo-client": "^2.5.1",
     "apollo-link": "^1.2.11",
     "apollo-link-error": "^1.1.10",
-    "apollo-link-http": "^1.5.4",
+    "apollo-link-http": "^1.5.14",
     "apollo-link-retry": "^2.2.13",
     "autoprefixer": "^9.5.1",
     "axios": "^0.18.0",
