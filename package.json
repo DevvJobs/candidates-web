@@ -81,7 +81,7 @@
     "svgo-loader": "^2.1.0",
     "ua-parser-js": "^0.7.18",
     "uglifyjs-webpack-plugin": "^1.1.1",
-    "url-loader": "^0.5.8",
+    "url-loader": "^1.1.2",
     "uuid": "^3.3.2",
     "v-autocomplete": "git+https://github.com/DevvJobs/v-autocomplete.git#91e4d845475d8fc1337e8ee9572af7e2d4a9c803",
     "vue": "^2.6.10",
