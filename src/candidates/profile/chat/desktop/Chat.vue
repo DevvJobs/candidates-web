@@ -94,7 +94,7 @@ export default {
   },
   beforeRouteEnter (to, from, next) {
     if (window.innerWidth <= 768) {
-      next({name: 'ProfileMobileChatThreads'});
+      next({ name: 'ProfileMobileChatThreads' });
     } else {
       next();
     }

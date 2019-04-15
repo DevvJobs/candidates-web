@@ -63,7 +63,7 @@ export default {
   },
   beforeRouteEnter (to, from, next) {
     if (window.innerWidth >= 768) {
-      next({name: 'ProfileChat'});
+      next({ name: 'ProfileChat' });
     } else {
       next();
     }

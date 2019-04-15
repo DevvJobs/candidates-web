@@ -20,7 +20,7 @@ const gotoCountry = (toName, next) => {
     if (toName === 'ProfileCreateCountry') {
       next();
     } else {
-      next({name: 'ProfileCreateCountry'});
+      next({ name: 'ProfileCreateCountry' });
     }
   }
 };
@@ -32,7 +32,7 @@ const gotoSkills = (toName, next) => {
     if (toName === 'ProfileCreateSkills') {
       next();
     } else {
-      next({name: 'ProfileCreateSkills'});
+      next({ name: 'ProfileCreateSkills' });
     }
   }
 };
@@ -44,7 +44,7 @@ const gotoRelocate = (toName, next) => {
     if (toName === 'ProfileCreateRelocate') {
       next();
     } else {
-      next({name: 'ProfileCreateRelocate'});
+      next({ name: 'ProfileCreateRelocate' });
     }
   }
 };
@@ -56,7 +56,7 @@ const gotoRemote = (toName, next) => {
     if (toName === 'ProfileCreateRemote') {
       next();
     } else {
-      next({name: 'ProfileCreateRemote'});
+      next({ name: 'ProfileCreateRemote' });
     }
   }
 };

@@ -39,7 +39,7 @@ const mutations = {
 };
 
 const actions = {
-  async signUp ({commit, dispatch}, {name, email}) {
+  async signUp ({ commit, dispatch }, { name, email }) {
     try {
       commit('setLoading', null, { root: true });
 
@@ -65,11 +65,11 @@ const actions = {
       commit('unsetLoading', null, { root: true });
     }
   },
-  async requestLoginCode ({commit, dispatch}, email) {
+  async requestLoginCode ({ commit, dispatch }, email) {
     try {
       commit('setLoading', null, { root: true });
 
-      const response = await AuthGraphqlService.requestLoginCode({email});
+      const response = await AuthGraphqlService.requestLoginCode({ email });
 
       if (response.success) {
         commit(SET_LOGIN_ATTEMPT, response);
@@ -90,7 +90,7 @@ const actions = {
       commit('unsetLoading', null, { root: true });
     }
   },
-  async submitLoginCode ({commit, dispatch}, code) {
+  async submitLoginCode ({ commit, dispatch }, code) {
     try {
       commit('setLoading', null, { root: true });
 
@@ -118,11 +118,11 @@ const actions = {
       commit('unsetLoading', null, { root: true });
     }
   },
-  async logout ({commit, dispatch}) {
+  async logout ({ commit, dispatch }) {
     try {
       commit('setLoading', null, { root: true });
 
-      const response = await AuthGraphqlService.logout({token: state.token});
+      const response = await AuthGraphqlService.logout({ token: state.token });
 
       localStorage.removeItem('token');
       localStorage.removeItem('token-tests');

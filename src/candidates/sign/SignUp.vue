@@ -95,7 +95,7 @@ export default {
           if (error) {
             this.errors = error.response.data.errors;
           } else {
-            this.errors = {email: [{message: 'Unexpected error'}]};
+            this.errors = { email: [{ message: 'Unexpected error' }] };
           }
         });
     }

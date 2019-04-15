@@ -7,7 +7,7 @@ class Auth {
   }
   getAuthData (email) {
     return this.axios
-      .post('/login_codes', {email: email})
+      .post('/login_codes', { email: email })
       .then((response) => {
         this.email = email;
         this.session_id = response.data.session_id;

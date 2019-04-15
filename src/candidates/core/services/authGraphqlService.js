@@ -6,7 +6,7 @@ class AuthGraphqlService {
     this.apolloAuthClient = apolloAuthClient;
   }
 
-  signup ({name, email}) {
+  signup ({ name, email }) {
     const variables = { name: name, email: email };
     return this.apolloAuthClient.mutate({
       mutation: gql`
@@ -34,7 +34,7 @@ class AuthGraphqlService {
     }).then(res => res.data.signup);
   }
 
-  requestLoginCode ({email}) {
+  requestLoginCode ({ email }) {
     const variables = { email: email };
     return this.apolloAuthClient.mutate({
       mutation: gql`
@@ -60,7 +60,7 @@ class AuthGraphqlService {
     }).then(res => res.data.requestLoginCode);
   }
 
-  submitLoginCode ({email, code, loginAttemptToken}) {
+  submitLoginCode ({ email, code, loginAttemptToken }) {
     const variables = {
       email: email,
       code: code,
@@ -105,7 +105,7 @@ class AuthGraphqlService {
     }).then(res => res.data.submitLoginCode);
   }
 
-  logout ({token}) {
+  logout ({ token }) {
     const variables = { token: token };
     return this.apolloAuthClient.mutate({
       mutation: gql`

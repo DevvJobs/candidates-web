@@ -95,7 +95,7 @@ export default {
       sendMessage: 'chat/sendMessage'
     }),
     onMessageSubmit (messageText) {
-      this.sendMessage({text: messageText, senderName: this.candidate.name})
+      this.sendMessage({ text: messageText, senderName: this.candidate.name })
         .then(() => { /* success */ })
         .catch(() => { /* error */ });
     },
@@ -108,7 +108,7 @@ export default {
       });
     },
     backToThreads () {
-      this.$router.push({name: 'ProfileMobileChatThreads'});
+      this.$router.push({ name: 'ProfileMobileChatThreads' });
     }
   },
   created () {

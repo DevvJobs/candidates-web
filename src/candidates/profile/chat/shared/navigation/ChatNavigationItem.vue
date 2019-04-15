@@ -100,7 +100,7 @@ export default {
     },
     openFirstChat () {
       if (this.contacts[0]) {
-        this.$router.push({name: 'ProfileChatMessages', params: {id: this.showedContacts[0].id}});
+        this.$router.push({ name: 'ProfileChatMessages', params: { id: this.showedContacts[0].id } });
       }
     }
   },
@@ -125,7 +125,7 @@ export default {
       return this.contact.unreadMessagesCount === 0;
     },
     routerLink () {
-      return {name: 'ProfileChatMessages', params: {id: this.contact.id}};
+      return { name: 'ProfileChatMessages', params: { id: this.contact.id } };
     }
   }
 };

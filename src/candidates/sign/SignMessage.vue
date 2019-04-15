@@ -51,7 +51,7 @@ export default {
           if (error.response) {
             this.errors = error.response.data.details;
           } else {
-            this.errors = {email: [{message: 'Unexpected error'}]};
+            this.errors = { email: [{ message: 'Unexpected error' }] };
           }
         });
     }

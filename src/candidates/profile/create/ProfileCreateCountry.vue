@@ -44,7 +44,7 @@ import { mapGetters, mapActions } from 'vuex';
 import InputWrapper from '@/core/components/form/InputWrapper';
 import ProfileCreateTitle from '@/candidates/profile/create/shared/ProfileCreateTitle';
 import ProfileCreateProgress from '@/candidates/profile/create/shared/ProfileCreateProgress';
-import {autocomplete} from '@/core/mixins/autocomplete';
+import { autocomplete } from '@/core/mixins/autocomplete';
 
 export default {
   mixins: [
@@ -102,7 +102,7 @@ export default {
       };
       this.updateCandidate(data)
         .then(() => {
-          this.$router.push({name: 'ProfileCreateSkills'});
+          this.$router.push({ name: 'ProfileCreateSkills' });
         })
         .catch((errors) => {
           if (typeof errors === 'object' && errors._expected === true) {

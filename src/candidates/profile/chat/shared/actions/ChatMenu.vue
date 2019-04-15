@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import {mapActions, mapMutations, mapGetters} from 'vuex';
-import {ACCEPTED} from '@/core/modules/chat/contactStatuses';
+import { mapActions, mapMutations, mapGetters } from 'vuex';
+import { ACCEPTED } from '@/core/modules/chat/contactStatuses';
 
 export default {
   computed: {

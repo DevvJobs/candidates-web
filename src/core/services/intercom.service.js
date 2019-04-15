@@ -47,7 +47,7 @@ class Intercom {
   hideLauncher (value) {
     if (isEnabled) {
       setTimeout(
-        _ => window.Intercom('update', {hide_default_launcher: value}),
+        _ => window.Intercom('update', { hide_default_launcher: value }),
         0
       );
     }
