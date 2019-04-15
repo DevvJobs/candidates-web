@@ -35,8 +35,8 @@ import TestConductQuestion from '@/candidates/profile/tests/conduct/test-conduct
 /**
  * Helpers js
  */
-import {Parser} from '@/candidates/profile/tests/conduct/parser.service';
-import {ConductTestFactory} from '@/candidates/profile/tests/conduct/conduct-test.factory';
+import { Parser } from '@/candidates/profile/tests/conduct/parser.service';
+import { ConductTestFactory } from '@/candidates/profile/tests/conduct/conduct-test.factory';
 
 /**
  * Libraries
@@ -175,7 +175,7 @@ export default {
         .then(resp => {
           if (!resp) {
             this.setCurrentTestTab(FINISHED);
-            this.$router.replace({name: 'CandidateTests'});
+            this.$router.replace({ name: 'CandidateTests' });
 
             return this.setTestsLoader(false);
           }

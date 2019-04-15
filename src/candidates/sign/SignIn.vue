@@ -59,7 +59,7 @@ export default {
     }),
     signInRedirect () {
       localStorage.removeItem('lastStepComplete');
-      this.$router.push({path: '/sign/up'});
+      this.$router.push({ path: '/sign/up' });
     },
     onSubmit () {
       this.signIn(this.email)
@@ -73,7 +73,7 @@ export default {
           if (error.response) {
             this.errors = error.response.data.details;
           } else {
-            this.errors = {email: [{message: 'Unexpected error'}]};
+            this.errors = { email: [{ message: 'Unexpected error' }] };
           }
         });
     }

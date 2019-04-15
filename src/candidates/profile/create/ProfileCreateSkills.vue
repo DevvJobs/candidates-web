@@ -198,7 +198,7 @@ export default {
         candidateService.updateCandidateProfileSkills(
           putSkillString(this.skills),
           () => {
-            this.$router.push({name: 'ProfileCreateRelocate'});
+            this.$router.push({ name: 'ProfileCreateRelocate' });
             this.setCandidateSkills(this.skills);
           }
         );

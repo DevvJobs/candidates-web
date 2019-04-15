@@ -70,7 +70,7 @@ export default {
       this.signIn(this.code)
         .then((response) => {
           if (response.success) {
-            this.$router.push({path: '/profile/create'});
+            this.$router.push({ path: '/profile/create' });
           } else {
             this.errors = response.errors;
           };
@@ -78,7 +78,7 @@ export default {
           if (error.response) {
             this.errors = error.response.data.details;
           } else {
-            this.errors = {email: [{message: 'Unexpected error'}]};
+            this.errors = { email: [{ message: 'Unexpected error' }] };
           }
         });
     }

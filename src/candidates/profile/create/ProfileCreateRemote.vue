@@ -45,7 +45,7 @@ export default {
       };
       this.updateCandidate(data)
         .then(() => {
-          this.$router.push({name: 'ProfileDashboard'});
+          this.$router.push({ name: 'ProfileDashboard' });
         })
         .catch((errors) => {
           console.log(errors);

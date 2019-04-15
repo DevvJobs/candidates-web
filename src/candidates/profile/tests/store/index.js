@@ -85,7 +85,7 @@ const mutations = {
 };
 
 const actions = {
-  async fetchTests ({commit}) {
+  async fetchTests ({ commit }) {
     try {
       const tests = await candidateTestsGraphqlApi.fetchTests();
       commit(SET_TESTS, tests);
@@ -95,7 +95,7 @@ const actions = {
       throw error;
     }
   },
-  async fetchTemplates ({commit}) {
+  async fetchTemplates ({ commit }) {
     try {
       const templates = await allTestsGraphQlApi.fetchTemplates();
       commit(SET_TEMPLATES, templates);
@@ -105,7 +105,7 @@ const actions = {
       throw error;
     }
   },
-  async fetchProficiencyLevels ({commit}) {
+  async fetchProficiencyLevels ({ commit }) {
     try {
       const proficiencyLevels = await allTestsGraphQlApi.fetchProficiencyLevels();
       commit(SET_PROFICIENCY_LEVELS, proficiencyLevels);
@@ -115,7 +115,7 @@ const actions = {
       throw error;
     }
   },
-  async fetchConductTest ({commit}) {
+  async fetchConductTest ({ commit }) {
     try {
       const currentTest = await conductTestGraphQlApiService.fetchTest();
 
@@ -128,7 +128,7 @@ const actions = {
       throw error;
     }
   },
-  async submitCurrentTest ({commit}, answer) {
+  async submitCurrentTest ({ commit }, answer) {
     try {
       commit(CLEAR_CURRENT_CONDUCT_TEST);
 
@@ -149,12 +149,12 @@ const actions = {
       throw error;
     }
   },
-  async addTemplateToTests ({commit, state}, template) {
+  async addTemplateToTests ({ commit, state }, template) {
     try {
       await allTestsGraphQlApi.addTemplateToTests(template.id);
-      const updatedTemplate = {...template, added: true};
+      const updatedTemplate = { ...template, added: true };
       commit(UPDATE_TEMPLATE, updatedTemplate);
-      const test = {...template, status: 'not_started'};
+      const test = { ...template, status: 'not_started' };
       commit(ADD_TEST, test);
     } catch (error) {
       ErrorReporting(error);

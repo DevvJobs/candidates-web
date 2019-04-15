@@ -169,7 +169,7 @@ const mutations = {
 };
 
 const actions = {
-  async fetchContacts ({commit, state}) {
+  async fetchContacts ({ commit, state }) {
     try {
       const contacts = await chatGraphqlApiService.getContacts();
       commit(SET_CONTACTS, contacts);
@@ -188,7 +188,7 @@ const actions = {
       throw error;
     }
   },
-  async fetchArchivedContacts ({commit}) {
+  async fetchArchivedContacts ({ commit }) {
     try {
       commit(SET_CHAT_LOADER);
       const contacts = await chatGraphqlApiService.getArchivedContacts();
@@ -207,7 +207,7 @@ const actions = {
       throw error;
     }
   },
-  async selectContact ({commit}, contact) {
+  async selectContact ({ commit }, contact) {
     try {
       commit(SET_CHAT_LOADER);
       commit(SET_SELECTED_CONTACT, contact);
@@ -220,7 +220,7 @@ const actions = {
       throw error;
     }
   },
-  async refreshSelectedContactMessages ({commit, state}) {
+  async refreshSelectedContactMessages ({ commit, state }) {
     try {
       const messages = await chatGraphqlApiService.getContactMessages(state.selectedContact.id);
       return commit(SET_MESSAGES, messages);
@@ -244,9 +244,9 @@ const actions = {
       throw error;
     }
   },
-  async sendMessage ({state, commit}, msg) {
+  async sendMessage ({ state, commit }, msg) {
     try {
-      const message = Message.buildCandidateMessageFromText({text: msg.text, senderName: msg.senderName});
+      const message = Message.buildCandidateMessageFromText({ text: msg.text, senderName: msg.senderName });
       commit(ADD_MESSAGE, message);
       await chatGraphqlApiService.addMessage(state.selectedContact.id, msg.text);
       // TODO: Add here actual error handling on add message mutation and remove message from state on error
@@ -324,10 +324,10 @@ const actions = {
         commit(SET_ERROR_FOR_ARCHIVE_BASE, null);
         if (state.showedContacts && state.showedContacts.length > 0) {
           dispatch('selectContact', state.showedContacts[0]);
-          router.push({name: 'ProfileChatMessages', params: {id: state.showedContacts[0].id}});
+          router.push({ name: 'ProfileChatMessages', params: { id: state.showedContacts[0].id } });
         } else {
           commit(SET_SHOW_THREADS, true);
-          router.push({name: 'ProfileChat'});
+          router.push({ name: 'ProfileChat' });
         };
       } else {
         let idError = result.errors.ids ? result.errors.ids[0].message : null;
@@ -341,15 +341,15 @@ const actions = {
       throw error;
     }
   },
-  async setActiveTab ({state, commit, dispatch}, tab) {
+  async setActiveTab ({ state, commit, dispatch }, tab) {
     commit(SET_ACTIVE_TAB, tab);
     commit(SET_SHOWED_CONTACTS);
     if (state.showedContacts && state.showedContacts.length > 0) {
       dispatch('selectContact', state.showedContacts[0]);
-      router.push({name: 'ProfileChatMessages', params: {id: state.showedContacts[0].id}});
+      router.push({ name: 'ProfileChatMessages', params: { id: state.showedContacts[0].id } });
     } else {
       commit(SET_SHOW_THREADS, true);
-      router.push({name: 'ProfileChat'});
+      router.push({ name: 'ProfileChat' });
     };
   }
 };

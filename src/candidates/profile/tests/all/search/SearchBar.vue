@@ -72,7 +72,7 @@ export default {
       return this.isSkillAdded && this.isProficiencyLevelAdded;
     },
     searchParamsSkills () {
-      const allSkills = this.templates.map((item) => { return {name: item.skill.name, type: 'skill'}; });
+      const allSkills = this.templates.map((item) => { return { name: item.skill.name, type: 'skill' }; });
       const foundNames = {};
       const uniqueSkills = allSkills.filter(function (item) {
         if (foundNames[item.name] === true) {

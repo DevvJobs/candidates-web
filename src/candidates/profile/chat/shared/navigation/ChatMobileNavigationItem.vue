@@ -117,7 +117,7 @@ export default {
       return this.contact.unreadMessagesCount === 0;
     },
     routerLink () {
-      return {name: 'ProfileMobileChatMessages', params: {id: this.contact.id}};
+      return { name: 'ProfileMobileChatMessages', params: { id: this.contact.id } };
     }
   }
 };

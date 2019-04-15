@@ -1,4 +1,4 @@
-import {UAParser} from 'ua-parser-js';
+import { UAParser } from 'ua-parser-js';
 import {
   candidateSentryClient
 } from '@/candidates/core/services/candidate.sentry.client';

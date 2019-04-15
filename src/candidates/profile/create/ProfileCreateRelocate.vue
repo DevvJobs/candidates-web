@@ -45,7 +45,7 @@ export default {
       };
       this.updateCandidate(data)
         .then(() => {
-          this.$router.push({name: 'ProfileCreateRemote'});
+          this.$router.push({ name: 'ProfileCreateRemote' });
         })
         .catch((errors) => {
           console.log(errors);

@@ -36,10 +36,10 @@ const mutations = {
     state.candidate = candidate;
   },
   [SET_CANDIDATE_CHAT_REQUEST_COUNT] (state, totalContactRequestsCount) {
-    state.candidate = {...state.candidate, totalContactRequestsCount: totalContactRequestsCount};
+    state.candidate = { ...state.candidate, totalContactRequestsCount: totalContactRequestsCount };
   },
   [SET_CANDIDATE_CHAT_MESSAGES_COUNT] (state, totalUnreadMessagesCount) {
-    state.candidate = {...state.candidate, totalUnreadMessagesCount: totalUnreadMessagesCount};
+    state.candidate = { ...state.candidate, totalUnreadMessagesCount: totalUnreadMessagesCount };
   },
   [SET_CANDIDATE_NAME] (state, candidateName) {
     state.candidate = { ...state.candidate, name: candidateName };
@@ -76,7 +76,7 @@ const mutations = {
 };
 
 const actions = {
-  async fetchCandidate ({commit}) {
+  async fetchCandidate ({ commit }) {
     try {
       const response = await apolloClient.query({
         query: queries.candidate
@@ -90,7 +90,7 @@ const actions = {
       throw error;
     }
   },
-  async fetchLocations ({commit}, searchText) {
+  async fetchLocations ({ commit }, searchText) {
     try {
       const response = await locationService.list(searchText);
       return response;
@@ -100,7 +100,7 @@ const actions = {
       throw error;
     }
   },
-  async fetchSkills ({commit}, searchText) {
+  async fetchSkills ({ commit }, searchText) {
     try {
       const response = await skillService.list(searchText);
       return response;
@@ -110,7 +110,7 @@ const actions = {
       throw error;
     }
   },
-  async updateCandidateCounter ({commit}) {
+  async updateCandidateCounter ({ commit }) {
     try {
       const response = await apolloClient.query({
         query: queries.candidate
