@@ -39,7 +39,7 @@
     "copy-webpack-plugin": "^5.0.2",
     "cross-env": "^5.2.0",
     "cross-spawn": "^6.0.5",
-    "css-loader": "^0.28.0",
+    "css-loader": "^1.0.1",
     "dotenv": "^7.0.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^11.0.0",
