@@ -1,11 +1,11 @@
 <template>
-  <div class="nav-mobile" >
+  <div class="nav-mobile" v-click-outside="hideMenu">
     <button type="button" class="nav-mobile__btn" v-on:click="isShowMenu()">
       <svg class="nav-mobile__icon">
         <use xlink:href="#menu"></use>
       </svg>
     </button>
-    <div class="nav-mobile__data" v-if="showMenu" v-click-outside="hideMenu">
+    <div class="nav-mobile__data" v-if="showMenu">
       <div class="nav-mobile__box">
         <router-link v-on:click.native="hideMenuOnRouteChange()" :to="'/profile'" class="nav-mobile__link">
           <img class="nav-mobile__logo" src="/static/logo.svg" alt="logo">
