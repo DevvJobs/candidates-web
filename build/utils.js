@@ -30,14 +30,18 @@ const buildcssLoaders = function (options) {
       sourceMap: options.sourceMap,
       plugins: (loader) => [
         require('postcss-import'),
-        require("postcss-custom-media")({ extensions: {
-          '--phone-viewport': '(max-width: 30em)', // 480
-          '--phoneLarge-viewport': '(max-width: 36em)', // 576
-          '--tablet-viewport': '(max-width: 48em)', // 768
-          '--desktopSmall-viewport': '(max-width: 53em)', // 848
-          '--desktop-viewport': '(max-width: 60em)', // 960
-          '--desktopLarge-viewport': '(max-width: 77em)' // 1232
-        }}),
+        require("postcss-custom-media")({
+          importFrom: {
+            customMedia: {
+              '--phone-viewport': '(max-width: 30em)', // 480
+              '--phoneLarge-viewport': '(max-width: 36em)', // 576
+              '--tablet-viewport': '(max-width: 48em)', // 768
+              '--desktopSmall-viewport': '(max-width: 53em)', // 848
+              '--desktop-viewport': '(max-width: 60em)', // 960
+              '--desktopLarge-viewport': '(max-width: 77em)' // 1232
+            }
+          }
+        }),
         require('postcss-nested'),
         require('postcss-preset-env')()
       ]
@@ -45,7 +49,7 @@ const buildcssLoaders = function (options) {
   };
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
+  function generateLoaders(loader, loaderOptions) {
     const loaders =
       options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader];
 
