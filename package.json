@@ -15,7 +15,7 @@
     "static": "node ./static-server.js"
   },
   "dependencies": {
-    "@sentry/browser": "^5.3.0",
+    "@sentry/browser": "^5.4.0",
     "apollo-cache-inmemory": "^1.6.0",
     "apollo-client": "^2.6.0",
     "apollo-link": "^1.2.11",
