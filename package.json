@@ -93,7 +93,7 @@
     "vue-template-compiler": "^2.6.10",
     "vue-upload-component": "^2.8.20",
     "vuex": "^3.1.1",
-    "webpack": "^4.32.2",
+    "webpack": "^4.34.0",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.5.1",
